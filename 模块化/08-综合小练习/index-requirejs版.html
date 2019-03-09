@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+
+  <ul id="paginator"></ul>
+
+
+  <script src="require.js"></script>
+  <script>
+
+    require.config({
+      baseUrl: 'lib/',
+      paths: {
+        "jquery": "jquery/jquery",
+        "bootstrap": "bootstrap/js/bootstrap",
+        "bootstrapPaginator": "bootstrap-paginator/bootstrap-paginator"
+      },
+      shim: {
+        "bootstrap":{
+          deps: ["jquery"]
+        },
+        "bootstrapPaginator": {
+          deps: ["bootstrap"]
+        }
+      }
+    });
+
+    require(["bootstrapPaginator"], function () {
+      $("#paginator").bootstrapPaginator({
+        bootstrapMajorVersion: 3,
+        currentPage: 1,
+        totalPages: 10
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

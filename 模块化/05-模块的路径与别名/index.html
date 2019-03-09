@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="require.js"></script>
+  <script>
+    //requirejs的配置
+    require.config({
+      //基本的地址, 以后所有的路径都会拼接上基础的地址
+      //baseUrl: "js/",
+      //配置别名
+      paths: {
+        "c": "js/common/common",
+        "jquery": "js/lib/jquery",
+        "login": "js/login/login"
+      }
+    });
+
+    require(["c", "jquery", "login"], function (o, $) {
+      console.log(o);
+      console.log($);
+    });
+
+  </script>
+</body>
+
+</html>

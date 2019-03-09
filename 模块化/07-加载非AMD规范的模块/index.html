@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+
+  <script src="require.js"></script>
+  <script>
+    
+    require.config({
+      paths: {
+        'jquery':'js/jquery-1.12.4',
+        "tool": 'js/tool'
+      },
+
+      //垫, 如果遇到了非AMD规范的模块，如果这个模块有输出，需要使用shim垫一下
+      shim: {
+        "tool": {
+          deps: ["jquery"],//配置这个模块的依赖
+          exports: "tool"   //配置模块的输出   
+        }
+      }
+    });
+
+    //需要加载tool的文件
+    require(["tool"], function(tool){
+      tool.bgc("div", "red");
+    });
+
+  
+  </script>
+</body>
+</html>

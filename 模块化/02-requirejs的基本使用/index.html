@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- 引包 -->
+  <script src="require.js"></script>
+  <script>
+  
+    //require
+    //参数1：加载哪些模块 []
+    //参数2：加载完成后的回调函数
+    require(["js/a", "js/b", "js/c"], function(){
+      console.log("三个模块都加载完成了");
+    });
+    
+  </script>
+
+</body>
+</html>

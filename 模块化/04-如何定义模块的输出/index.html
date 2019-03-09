@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="require.js"></script>
+  <script>
+  
+
+    //加载了a.js文件
+    //需要在第二个参数，就是函数，指定形参来接收
+  
+    //如果需要加载多个模块，并且都有输出，需要使用形参与加载的模块进行一一对应。
+    require(["js/b", "js/a", "js/c"], function(nb, o){
+      o.sayHi();
+      o.getSearch();
+      nb();
+      console.log(ud);
+    });  
+
+  </script>
+</body>
+</html>
